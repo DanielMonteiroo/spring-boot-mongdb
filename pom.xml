@@ -29,6 +29,7 @@
 	<properties>
 		<java.version>21</java.version>
 	</properties>
+<<<<<<< HEAD
 	
 	<dependencies>
 				
@@ -38,6 +39,9 @@
 	    </dependency>
 
 	   
+=======
+	<dependencies>
+>>>>>>> 97e46da827520630a7de50042c225d0b04bede5b
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
