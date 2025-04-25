@@ -41,7 +41,24 @@ public class UserService {
 			findById(id);
 			repo.deleteById(id);
 		}
-	
+		
+		//Metodo para atualizar um usuario
+		public User update(User obj) {
+			Optional<User> newObj = repo.findById(obj.getId());
+			if(newObj.isPresent()) {
+			updateData(newObj,obj);
+			return repo.save(newObj);
+			}
+			else{
+				 throw new ObjectNotFoundException("Usuário não encontrado");
+			}
+		}
+	    
+		//Método privado do metodo update
+	   private void updateData(Optional<User> newObj, User obj) {
+		newObj.get();
+		}
+
 	//Metodo de retorno dto
 	public User fromDTO(UserDTO objDTO) {
 		return new User(objDTO.getId(),objDTO.getName(), objDTO.getEmail());	
